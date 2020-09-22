@@ -22,11 +22,4 @@
   images: "bw"
   cover: "./bw/projects-bw-001.jpg"
   desc: "Monochrome photography is photography where each position on an image can record and show a different amount of light, but not a different hue. It includes all forms of black-and-white photography, which produce images containing tones of neutral grey ranging from black to white."
-- title: "Breakfast"
-  title_detail: "Breakfast - The most important time of the day"
-  slug: "/breakfast"
-  category: "Photography"
-  color: "#82726b"
-  images: "breakfast"
-  cover: "./breakfast/projects-breakfast-001.jpg"
-  desc: "The first meal of the day."
+
