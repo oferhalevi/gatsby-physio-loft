@@ -176,7 +176,7 @@ export const query = graphql `
         }
       }
     }
-    promotions: file(sourceInstanceName: { eq: "images" }, name: { eq: "instagram" }) {
+    promotions: file(sourceInstanceName: { eq: "images" }, name: { eq: "promotions" }) {
       childImageSharp {
         fluid(quality: 95, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
