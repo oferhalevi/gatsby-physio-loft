@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { animated } from 'react-spring'
+import {animated} from 'react-spring'
 
 import {
   space,
@@ -23,12 +23,12 @@ import {
   JustifyContentProps,
   AlignSelfProps,
   TextAlignProps,
-  FontSizeProps,
+  FontSizeProps
 } from 'styled-system'
 
 type BoxProps = SpaceProps & WidthProps & ColorProps & FlexProps & AlignSelfProps & TextAlignProps & FontSizeProps
 
-export const Box = styled.div<BoxProps>`
+export const Box = styled.div < BoxProps > `
   box-sizing: border-box;
   ${space}
   ${width}
@@ -43,7 +43,7 @@ Box.displayName = 'Box'
 
 type AnimatedBoxProps = SpaceProps & WidthProps & ColorProps & FlexProps & AlignSelfProps & TextAlignProps
 
-export const AnimatedBox = styled(animated.div)<AnimatedBoxProps>`
+export const AnimatedBox = styled(animated.div) < AnimatedBoxProps > `
   box-sizing: border-box;
   ${space}
   ${width}
@@ -57,7 +57,7 @@ AnimatedBox.displayName = 'AnimatedBox'
 
 type FlexCompProps = SpaceProps & FlexWrapProps & FlexDirectionProps & AlignItemsProps & JustifyContentProps
 
-export const Flex = styled.div<FlexCompProps>`
+export const Flex = styled.div < FlexCompProps > `
   display: flex;
   ${space}
   ${flexWrap}
@@ -70,7 +70,7 @@ Flex.displayName = 'Flex'
 
 type AnimatedFlexCompProps = SpaceProps & FlexWrapProps & FlexDirectionProps & AlignItemsProps & JustifyContentProps
 
-export const AnimatedFlex = styled(animated.div)<AnimatedFlexCompProps>`
+export const AnimatedFlex = styled(animated.div) < AnimatedFlexCompProps > `
   display: flex;
   ${space}
   ${flexWrap}
@@ -83,7 +83,7 @@ AnimatedFlex.displayName = 'AnimatedFlex'
 
 type ButtonProps = SpaceProps & WidthProps & ColorProps
 
-export const Button = styled.button<ButtonProps>`
+export const Button = styled.button < ButtonProps > `
   border-radius: 1000rem;
   border: none;
   font-weight: 700;
