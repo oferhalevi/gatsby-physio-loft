@@ -194,6 +194,7 @@ const SEO = ({
     {!individual && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
     {individual && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
     <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+    <link rel="stylesheet" href="https://use.typekit.net/aee4gtg.css"></link>
   </Helmet> < Facebook desc = {
     seo.description
   }
