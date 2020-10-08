@@ -1,46 +1,43 @@
 module.exports = {
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   extends: [
-    "airbnb",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/typescript",
-    "plugin:prettier/recommended",
-    "prettier/@typescript-eslint"
+    "airbnb", "plugin:@typescript-eslint/recommended", "plugin:import/typescript", "plugin:prettier/recommended", "prettier/@typescript-eslint"
   ],
-  plugins: ["@typescript-eslint", "prettier"],
+  plugins: [
+    "@typescript-eslint", "prettier"
+  ],
   parserOptions: {
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
     sourceType: 'module', // Allows for the use of imports
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     project: './tsconfig.json'
   },
   env: {
     browser: true,
     jest: true,
-    node: true,
+    node: true
   },
   globals: {
-    cy: true,
+    cy: true
   },
   rules: {
     "no-unused-vars": [
-      1,
-      {
+      1, {
         argsIgnorePattern: "res|next|stage|^err|on|config"
       }
     ],
-    "arrow-body-style": [2, "as-needed"],
+    "arrow-body-style": [
+      2, "as-needed"
+    ],
     "no-param-reassign": [
-      2,
-      {
+      2, {
         "props": false
       }
     ],
     "no-unused-expressions": [
-      1,
-      {
+      1, {
         "allowTaggedTemplates": true
       }
     ],
@@ -71,33 +68,34 @@ module.exports = {
     "react/prop-types": 0,
     "react/jsx-props-no-spreading": 0,
     "react/jsx-filename-extension": [
-      1,
-      {
+      1, {
         "extensions": [".js", ".jsx", ".tsx"]
       }
     ],
     quotes: [
       2,
-      "single",
-      {
+      "single", {
         avoidEscape: true,
         allowTemplateLiterals: true
       }
     ],
-    indent: ["error", 2, { SwitchCase: 1 }],
-    "prettier/prettier": [
+    indent: [
       "error",
-      {
+      2, {
+        SwitchCase: 1
+      }
+    ],
+    "prettier/prettier": [
+      "error", {
         trailingComma: "es5",
         semi: false,
         singleQuote: true,
-        printWidth: 120
+        printWidth: 80
       }
     ],
     "jsx-a11y/href-no-hash": "off",
     "jsx-a11y/anchor-is-valid": [
-      "warn",
-      {
+      "warn", {
         "aspects": ["invalidHref"]
       }
     ]

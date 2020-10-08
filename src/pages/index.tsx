@@ -10,20 +10,12 @@ import {ChildImageSharp} from '../types'
 
 type PageProps = {
   data: {
-    firstProject: {
-      title: string,
-      slug: string,
-      cover: ChildImageSharp
-    }
-    threeProjects: {
-      nodes: {
-        title: string,
-        slug: string,
-        cover: ChildImageSharp
-      }[]
-    }
     promotions: ChildImageSharp,
     aboutUs: ChildImageSharp,
+    education: ChildImageSharp,
+    physiotherapy: ChildImageSharp,
+    fitness: ChildImageSharp,
+
     //     instagram: ChildImageSharp
   }
 }
@@ -78,6 +70,13 @@ const AboutUs = styled(GridItem)`
   grid-area: about-us;
 `
 
+const Physio = styled(GridItem)`
+`
+const Fitness = styled(GridItem)`
+`
+const Education = styled(GridItem)`
+`
+
 const Promotions = styled(GridItem)`
   grid-area: promotions;
 `
@@ -95,10 +94,11 @@ const ThreeProjects = styled.div `
 
 const Index : React.FunctionComponent < PageProps > = ({
   data: {
-    firstProject,
-    threeProjects,
     aboutUs,
-    promotions
+    promotions,
+    education,
+    physiotherapy,
+    fitness
   }
 }) => {
   const pageAnimation = useSpring({
@@ -119,12 +119,32 @@ const Index : React.FunctionComponent < PageProps > = ({
           <Img fluid={aboutUs.childImageSharp.fluid}/>
           <span>About</span>
         </AboutUs>
-        <Promotions to="/about" aria-label="Visit my about page">
-          <Img fluid={promotions.childImageSharp.fluid}/>
-          <span>Promotions</span>
+        <Promotions
+          aria-label="Visit my about page"
+          style={{
+          background: 'rgb(13, 73, 27)'
+        }}>
+          {/* <Img fluid={promotions.childImageSharp.fluid}/> */}
+          <span style={{
+            textShadow: 'none'
+          }}>Special Promotion:<br/>
+            Save 20% on a 10 session package
+          </span>
         </Promotions>
         <ThreeProjects>
-          {threeProjects
+          <Physio to="/physiotherapy" aria-label="Physiotherapy">
+            <Img fluid={physiotherapy.childImageSharp.fluid}/>
+            <span>Physiotherapy</span>
+          </Physio>
+          <Fitness to="/fitness" aria-label="Physiotherapy">
+            <Img fluid={fitness.childImageSharp.fluid}/>
+            <span>Fitness</span>
+          </Fitness>
+          <Education to="/education" aria-label="Education">
+            <Img fluid={education.childImageSharp.fluid}/>
+            <span>Education</span>
+          </Education>
+          {/* {threeProjects
             .nodes
             .map((project) => (
               <GridItem
@@ -134,7 +154,7 @@ const Index : React.FunctionComponent < PageProps > = ({
                 <Img fluid={project.cover.childImageSharp.fluid}/>
                 <span>{project.title}</span>
               </GridItem>
-            ))}
+            ))} */}
         </ThreeProjects>
       </Area>
     </Layout>
@@ -145,30 +165,6 @@ export default Index
 
 export const query = graphql `
   query Index {
-    firstProject: projectsYaml {
-      title
-      slug
-      cover {
-        childImageSharp {
-          fluid(quality: 95, maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-    threeProjects: allProjectsYaml(limit: 4, skip: 0) {
-      nodes {
-        title
-        slug
-        cover {
-          childImageSharp {
-            fluid(quality: 95, maxWidth: 1200) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    }
     aboutUs: file(sourceInstanceName: { eq: "images" }, name: { eq: "about-us" }) {
       childImageSharp {
         fluid(quality: 95, maxWidth: 1200) {
@@ -177,6 +173,27 @@ export const query = graphql `
       }
     }
     promotions: file(sourceInstanceName: { eq: "images" }, name: { eq: "promotions" }) {
+      childImageSharp {
+        fluid(quality: 95, maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    education: file(sourceInstanceName: { eq: "images" }, name: { eq: "education" }) {
+      childImageSharp {
+        fluid(quality: 95, maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    physiotherapy: file(sourceInstanceName: { eq: "images" }, name: { eq: "physiotherapy" }) {
+      childImageSharp {
+        fluid(quality: 95, maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    fitness: file(sourceInstanceName: { eq: "images" }, name: { eq: "fitness" }) {
       childImageSharp {
         fluid(quality: 95, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
