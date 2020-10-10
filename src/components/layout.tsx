@@ -7,6 +7,7 @@ import {Box, Flex} from '../elements'
 import theme from '../../config/theme'
 import reset from '../styles/reset'
 import Logo from './logo'
+import SEO from '../components/SEO'
 
 const GlobalStyles = createGlobalStyle `
   *::before,
@@ -226,11 +227,12 @@ const MailTo = styled.a `
 display: block;`;
 const WhatsApp = styled.a `
   display: inline-block;
-  background: green;
+  background: rgb(13, 73, 27);
   color: white !important;
   padding:  8px 16px;
   font-weight: 500;
   height: 16px;
+  line-height: 1;
   border-radius: 2em;
   margin-bottom: 16px;
   margin-right: 16px;
@@ -259,6 +261,7 @@ const Layout = ({children, color} : LayoutProps) => {
   return (
     <ThemeProvider theme={theme}>
       <> <GlobalStyles/>
+      <SEO/>
       <Wrapper>
         <SideBarInner bg={color} as="aside" p={[6, 6, 8]}>
           <Flex
@@ -266,14 +269,12 @@ const Layout = ({children, color} : LayoutProps) => {
             flexDirection={['row', 'row', 'row', 'column']}
             alignItems={['center', 'center', 'center', 'flex-start']}
             justifyContent="space-between">
-            <Box width={['3rem', '4rem', '5rem', '6rem']}>
-              <Link to="/" aria-label="LekoArts, Back to Home">
-                <Logo/>
-              </Link>
-            </Box>
+            <Link to="/" aria-label="Physio Loft">
+              <Logo/>
+            </Link>
             <Nav
               color={color}
-              mt={[0, 0, 0, 10]}
+              mt={[0, 0, 0, 6]}
               as="nav"
               flexWrap="nowrap"
               flexDirection={['row', 'row', 'row', 'column']}
@@ -301,20 +302,16 @@ const Layout = ({children, color} : LayoutProps) => {
               </MailTo>
             </p>
             Fisica Integrated Ltd. t/a Physio Loft<br/>
-            <address>
+            <address style={{
+              marginBottom: 16
+            }}>
               14F Union Commercial Building<br/>
               12 Lyndhurst Terrace<br/>
               Central, Hong Kong
             </address>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.8841111461006!2d114.15240631533197!3d22.282379349175205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404007b41667357%3A0x33a8a6acc76d9326!2sUnion%20Commercial%20Building%2C%2012-16%20Lyndhurst%20Terrace%2C%20Central!5e0!3m2!1sen!2shk!4v1602171554663!5m2!1sen!2shk"
-              width="100%"
-              height="280"
-              frameBorder="0"
-              style={{
-              border: 0,
-              marginTop: 16
-            }}></iframe>
+            <a
+              target="_blank"
+              href="https://www.google.com/maps/place/Union+Commercial+Building,+12-16+Lyndhurst+Terrace,+Central/@22.282374,114.154595,16z/data=!4m5!3m4!1s0x3404007b41667357:0x33a8a6acc76d9326!8m2!3d22.2823744!4d114.154595?hl=en">View map</a>
           </Box>
         </Footer>
       </Wrapper>

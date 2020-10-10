@@ -23,14 +23,14 @@ type PageProps = {
 const Area = styled(animated.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 40vw 30vw;
+  grid-template-rows: 30vw 30vw;
   grid-template-areas:
   'three-projects three-projects three-projects'
   'promotions about-us about-us';
 
   @media (max-width: ${ (props) => props.theme.breakpoints[3]}) {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 30vw 30vw 38vw;
+    grid-template-rows: 20vw 30vw 38vw;
 
     grid-template-areas:
       'three-projects three-projects three-projects'
@@ -77,8 +77,14 @@ const Fitness = styled(GridItem)`
 const Education = styled(GridItem)`
 `
 
-const Promotions = styled(GridItem)`
+const Promotions = styled.div `
   grid-area: promotions;
+  padding: 16px;
+  color: #fff;
+  background: rgb(13, 73, 27);
+  > span {
+    font-size: 24px;
+  }
 `
 
 const ThreeProjects = styled.div `
@@ -119,17 +125,20 @@ const Index : React.FunctionComponent < PageProps > = ({
           <Img fluid={aboutUs.childImageSharp.fluid}/>
           <span>About</span>
         </AboutUs>
-        <Promotions
-          aria-label="Visit my about page"
-          style={{
-          background: 'rgb(13, 73, 27)'
-        }}>
-          {/* <Img fluid={promotions.childImageSharp.fluid}/> */}
-          <span style={{
-            textShadow: 'none'
-          }}>Special Promotion:<br/>
-            Save 20% on a 10 session package
-          </span>
+        <Promotions aria-label="Visit my about page">
+          <h4 style={{
+            marginTop: 0
+          }}>Special Promotion</h4>
+          <div
+            style={{
+            fontSize: '2.5rem',
+            lineHeight: 1
+          }}>Save 20%</div>
+          <div style={{
+            fontSize: '1.5rem'
+          }}>
+            on a 10 session package
+          </div>
         </Promotions>
         <ThreeProjects>
           <Physio to="/physiotherapy" aria-label="Physiotherapy">

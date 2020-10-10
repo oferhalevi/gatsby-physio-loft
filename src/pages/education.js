@@ -2,11 +2,7 @@ import React from "react"
 import Layout from '../components/layout'
 import styled from 'styled-components'
 import {Box, AnimatedBox, Button} from '../elements'
-import Img from 'gatsby-image'
-import SEO from '../components/SEO'
 import {animated, useSpring, config} from 'react-spring'
-import {graphql} from 'gatsby'
-import {ChildImageSharp} from '../types'
 
 const PBox = styled(AnimatedBox)`
   max-width: 1400px;
@@ -45,34 +41,20 @@ const PhysioPage = ({data}) => {
     </PBox>
     <Content py={0}>
       <PBox px={[6, 6, 8, 10]}>
-        <p>The clinic is open to cater for aspiring professional practitioners for both
-          Pilates and Physiotherapy. Arrangements can be made for private or group
-          Mentorship. Please contact us for availability.</p>
-        <p>The clinic is equipped with a Pilates library, audio-visual area for group
-          studies, lectures, case studies, mock exams, etc.
+        <p style={{
+          fontSize: '1.5rem'
+        }}>Physio Loft caters for
+          aspiring professional instructors for both Studio Pilates and Physio-Pilates.
+          Arrangements can be made for private or group mentorship.
+        </p>
+        <p>The clinic is equipped with a Pilates library and an audio-visual area ideal
+          for lectures and study groups.
+        </p>
+        <p>Please contact us for availability.
         </p>
       </PBox>
     </Content>
   </Layout>
 }
-
-export const query = graphql `
-  query {
-    vesta: file(name: { eq: "vesta" }) {
-      childImageSharp {
-        fluid(quality: 95, maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    primo: file(name: { eq: "primo" }) {
-      childImageSharp {
-        fluid(quality: 95, maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-  }
-`
 
 export default PhysioPage

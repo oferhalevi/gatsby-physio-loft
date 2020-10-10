@@ -3,10 +3,8 @@ import Layout from '../components/layout'
 import styled from 'styled-components'
 import {Box, AnimatedBox, Button} from '../elements'
 import Img from 'gatsby-image'
-import SEO from '../components/SEO'
 import {animated, useSpring, config} from 'react-spring'
 import {graphql} from 'gatsby'
-import {ChildImageSharp} from '../types'
 
 const PBox = styled(AnimatedBox)`
   max-width: 1400px;
@@ -45,70 +43,74 @@ const PhysioPage = ({data}) => {
         </PBox>
         <Content py={0}>
             <PBox px={[6, 6, 8, 10]}>
-                <p>Physio Loft is primarily a clinical exercise facility. We start by helping
-                    people see, feel, and understand their conditions through movements. Then we
-                    teach people how to correct those movements. Eventually, we help people maintain
-                    and progress what they have learned. We compliment all these with manual
-                    therapy.</p>
-                <p>
-                    Physio Loft is also equipped with electrotherapy modalities that go very well
-                    with manual therapy. Both eastern and western influences are apparent in
-                    treatment sessions. This approach is proven to be very effective in managing
-                    various musculoskeletal conditions like neck pain or stiff neck, low back pain
-                    syndromes, shoulder and upper back problems, hip and pelvic joint dysfunctions,
-                    other muscle and joint pains. It is great also to be associating with massage
-                    and body works to relieve stress and tension.
+                <p style={{
+                    fontSize: '1.5rem'
+                }}>Physio
+                    Loft includes a private physiotherapy treatment room, and a clinical exercise
+                    space with Pilates equipment for Physio-Pilates programs.
                 </p>
-                <h4>Vesta Myofascial Release therapy with RET Diathermy</h4>
-                <figure><Img fluid={data.vesta.childImageSharp.fluid}/>
-                    <figcaption>RET (Resistive Electric Transfer) Diathermy + IASTM (Instrument
-                        Assisted Soft Tissue Mobilization) + Low Frequency Electric Manipulation (Magic
-                        Gloves). Made in Korea.</figcaption>
-                </figure>
+                <h4>Electrotherapy Modalities</h4>
                 <p>
-                    RET Diathermy converts electromagnetic energy to thermal energy. This thermal
-                    energy is transmitted to a body part through monopolar or bipolar plates, metal
-                    tools, and electrodes. The body’s response to heat is vasodilation. It helps in
-                    healing injuries, improving circulation, and alleviating pain. VESTA generates
-                    deep heat into the damaged tissue to accelerate intra and extra cellular
-                    exchanges and also aids in muscle relaxation.
+                    Physio Loft is equipped with various electrotherapy modalities that go well with
+                    manual therapy. Treatment sessions feature both eastern and western influences.
+                    This approach is proven to be very effective in managing various musculoskeletal
+                    conditions like neck pain or stiff neck, low back pain syndromes, shoulder and
+                    upper back problems, hip and pelvic joint dysfunctions, and other muscle and
+                    joint pains. It is also effective in combination with sports massage and other
+                    treatments to relieve stress and tension.
+
+                </p>
+                <h5>Vesta - RET Diathermy with IASTM</h5>
+                <Img fluid={data.vesta.childImageSharp.fluid}/>
+                <p>
+                    RET (Resistive Electric Transfer) Diathermy converts electromagnetic energy to
+                    thermal energy. This thermal energy is transmitted to a body part through
+                    monopolar or bipolar plates, metal tools, and electrodes. The body’s response to
+                    heat is vasodilation. It helps in healing injuries, improving circulation, and
+                    alleviating pain. VESTA generates deep heat into the damaged tissue to
+                    accelerate intra- and extra-cellular exchanges and aids in muscle relaxation.
                 </p>
                 <p>
-                    IASTM helps in manipulating soft tissues like muscles, tendons, and fascia. With
-                    the help of medical grade steel tools, it proves to be effective in breaking
-                    down adhesions, tightness, trigger points, and scar tissues. It can be
-                    administered as an alternative to sports massage.
+                    IASTM (Instrument Assisted Soft Tissue Mobilization), mainly for myofascial
+                    release therapy, helps in releasing tightened soft tissues like muscles,
+                    tendons, and fascia. With the help of medical grade steel tools, it proves to be
+                    effective in breaking down adhesions, trigger points, and scar tissues. It can
+                    be administered as an alternative to sports massage.
+
                 </p>
                 <p>
                     Combining the RET Diathermy and IASTM is such a practical idea. The core of
                     VESTA’s RF diathermy treatment is to speed up healing by simultaneously using
                     this IASTM tool that can ease the pain and increase the range of movement in a
-                    shorter period of time. The Eastern and Western Influences put together to
-                    create a surely interesting effective experience.
+                    shorter period of time. The eastern and western Influences are combined to
+                    create an interesting and effective experience.
+
                 </p>
                 <p>
-                    Low Frequency Electric Manipulation (Magic Gloves). Making your massages more
-                    interesting in both physical experience and technical effects of the modality.
-                    This combines electric stimulation of muscles and manual manipulation like
-                    massages, myofascial release, or trigger point release. Quite an electric
-                    experience.
+                    Low Frequency Electric Manipulation (Magic Gloves), a unique combination of
+                    electric stimulation and manual manipulation, elevates the massage experience
+                    and enhances its technical effects.
+
                 </p>
-                <h4>Therapeutic Ultrasound</h4>
+                <p style={{
+                    opacity: 0.5
+                }}>
+                    Made in Korea</p>
+                <h5>The Primo Combination 860 Therapeutic Ultrasound</h5>
                 <Img fluid={data.primo.childImageSharp.fluid}/>
-                <p>The Primo Combination 860 offers dual frequency ultrasound (1MHz and 3MHz)
-                    and the complete range of stimulation outputs that can be used individually or
-                    simultaneously in combination therapy.</p>
-                <p>
-                    Therapeutic Ultrasound unit helps in improving circulation and jumpstarting
+                <p>Therapeutic Ultrasound unit helps in improving circulation and jumpstarting
                     stagnated healing of chronic musculoskeletal conditions. This modality can be
-                    used simultaneously with a built in TENS (Transcutaneous Nerve Stimulator) Unit
-                    making the Ultrasound transducer head as one of the electrodes in transmitting
-                    the pain alleviating electric current.</p>
-                <p>Stimulation outputs: two and four pole interferential, Diadynamic, TENS,
-                    Sinusoidal, Galvanic and interrupted galvanic, Faradic, Trabert, Medi-Wave,
-                    Russian & Microcurrent output.
+                    used simultaneously with a built in TENS (Transcutaneous Nerve Stimulator) unit
+                    making the ultrasound transducer head as one of the electrodes in transmitting
+                    the pain alleviating electric current. This also has a diagnostic feature to
+                    help locate difficult pinpoint lesions.
                 </p>
-                <p>Diagnostic feature to help locate difficult to pinpoint lesions. Made in UK.</p>
+                <p
+                    style={{
+                    marginBottom: 50,
+                    opacity: 0.5
+                }}>
+                    Made in the UK</p>
             </PBox>
         </Content>
     </Layout>

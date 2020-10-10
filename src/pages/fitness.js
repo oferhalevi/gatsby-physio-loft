@@ -39,32 +39,33 @@ const Description = styled(animated.div)`
 `
 
 const PhysioPage = ({data}) => {
-    return <Layout>
-        <PBox py={6} px={[6, 6, 8, 10]}>
-            <h1>Fitness</h1>
-        </PBox>
-        <Content py={0}>
-            <PBox px={[6, 6, 8, 10]}>
-                <p>Physio Loft is equipped with a complete set of standard Pilates Equipment
-                    (Reformer, Trapeze Table, Combo chair, Ladder Barrel, Spine Corrector). All
-                    equipment is original Balanced Body Brand from the US. Pilates Mat instructions
-                    are also taught in the studio to help clients understand their home exercise
-                    programs. Small props are available as well like foam rollers, fit balls, rings,
-                    and various myofascial release props. All fitness training sessions are
-                    conducted in private setting. Arrangements can be possible for people who wish
-                    to exercise in pairs for Pilates equipments, and maximum of 4 for mat/floor
-                    work.</p>
-                <p>Experience training with Pilates equipments in a safe and conducive
-                    environment with very minimal people traffic compared to other Pilates studios.
-                    We have to be COVID smart about things.</p>
-                <p>Also, experience not just a great workout that makes you achieve your fitness
-                    goals but a program that leaves you with a clearer understanding of the concepts
-                    behind what you are doing from someone who practices the same thing.
-                </p>
-                <p>Polestar Pilates: Impacting the world with intelligent movements.</p>
-            </PBox>
-        </Content>
-    </Layout>
+  return <Layout>
+    <PBox py={6} px={[6, 6, 8, 10]}>
+      <h1>Fitness</h1>
+    </PBox>
+    <Content py={0}>
+      <PBox px={[6, 6, 8, 10]}>
+        <p style={{
+          fontSize: '1.5rem'
+        }}>Train with Pilates equipment
+          in a safe and private environment, with very minimal people traffic compared to
+          other Pilates studios.
+        </p>
+        <p >Physio Loft is equipped with a complete set of standard Pilates equipment
+          (Reformer, Trapeze Table, Combo chair, Ladder Barrel, Spine Corrector). All
+          equipment is original Balanced Body Brand from the US.
+        </p>
+        <p>Pilates Mat instructions are taught in the studio to help clients understand
+          their home exercise programs. Small props are also available, like foam rollers,
+          fit balls, rings, and various myofascial release props. All fitness training
+          sessions are conducted in a private setting.
+        </p>
+        <p>Arrangements are possible for people who wish to exercise in pairs for
+          Pilates equipment, and maximum of 4 for mat/floor work.
+        </p>
+      </PBox>
+    </Content>
+  </Layout>
 }
 
 export const query = graphql `
