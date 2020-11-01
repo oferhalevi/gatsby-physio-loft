@@ -25,17 +25,17 @@ const Area = styled(animated.div)`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 30vw 30vw;
   grid-template-areas:
-  'three-projects three-projects three-projects'
-  'promotions about-us about-us';
+  'about-us about-us promotions'
+  'three-projects three-projects three-projects';
 
   @media (max-width: ${ (props) => props.theme.breakpoints[3]}) {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 20vw 30vw 38vw;
+    grid-template-rows: 40vw 30vw 38vw;
 
     grid-template-areas:
+      'about-us about-us promotions'
       'three-projects three-projects three-projects'
-      'three-projects three-projects three-projects'
-      'promotions about-us about-us';
+      'three-projects three-projects three-projects';
   }
 
   @media (max-width: ${ (props) => props.theme.breakpoints[1]}) {
@@ -43,10 +43,10 @@ const Area = styled(animated.div)`
     grid-template-rows: repeat(4, 38vw);
 
     grid-template-areas:
+      'about-us promotions'
       'three-projects three-projects'
       'three-projects three-projects'
-      'three-projects three-projects'
-      'promotions about-us';
+      'three-projects three-projects';
   }
 
   @media (max-width: ${ (props) => props.theme.breakpoints[0]}) {
@@ -54,11 +54,11 @@ const Area = styled(animated.div)`
     grid-template-rows: repeat(5, 50vw);
 
     grid-template-areas:
-      'three-projects'
-      'three-projects'
-      'three-projects'
+      'about-us'
       'promotions'
-      'about-us';
+      'three-projects'
+      'three-projects'
+      'three-projects';
   }
 `
 
@@ -80,8 +80,8 @@ const Education = styled(GridItem)`
 const Promotions = styled.div `
   grid-area: promotions;
   padding: 16px;
-  color: #fff;
-  background: rgb(13, 73, 27);
+  color: rgb(13, 73, 27);
+  background: #fff;
   > span {
     font-size: 24px;
   }
@@ -188,7 +188,7 @@ export const query = graphql `
         }
       }
     }
-    education: file(sourceInstanceName: { eq: "images" }, name: { eq: "education" }) {
+    education: file(sourceInstanceName: { eq: "images" }, name: { eq: "education-course" }) {
       childImageSharp {
         fluid(quality: 95, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp

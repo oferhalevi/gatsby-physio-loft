@@ -15,12 +15,12 @@ const GridItem = styled(Link)`
   }
   > span {
     z-index: 10;
-    color: white;
+    color: #fff;
     position: absolute;
     left: 0;
     right: 0;
     text-align: right;
-    font-weight: 700;
+    font-weight: 400;
     font-size: ${ (props) => props.theme.fontSizes[4]};
     padding: ${ (props) => props.theme.space[6]};
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0,0,0,0.8), 0 0 50px rgba(0,0,0,0.5);

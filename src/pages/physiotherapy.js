@@ -46,8 +46,14 @@ const PhysioPage = ({data}) => {
                 <p style={{
                     fontSize: '1.5rem'
                 }}>Physio
-                    Loft includes a private physiotherapy treatment room, and a clinical exercise
-                    space with Pilates equipment for Physio-Pilates programs.
+                    Loft specializes in manual therapy and movement training, complemented with
+                    Electrotherapy.
+                </p>
+                <p style={{
+                    fontSize: '1.5rem'
+                }}>The clinic
+                    has a private physiotherapy treatment room, and an exercise space with Pilates
+                    equipment for Physio-Pilates programs.
                 </p>
                 <h4>Electrotherapy Modalities</h4>
                 <p>

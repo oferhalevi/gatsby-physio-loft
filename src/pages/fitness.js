@@ -55,13 +55,13 @@ const PhysioPage = ({data}) => {
           (Reformer, Trapeze Table, Combo chair, Ladder Barrel, Spine Corrector). All
           equipment is original Balanced Body Brand from the US.
         </p>
-        <p>Pilates Mat instructions are taught in the studio to help clients understand
-          their home exercise programs. Small props are also available, like foam rollers,
-          fit balls, rings, and various myofascial release props. All fitness training
-          sessions are conducted in a private setting.
+        <p>Pilates Mat instructions are also taught in the studio to help clients
+          understand their home exercise programs. Small props are available, like foam
+          rollers, fit balls, rings, and various myofascial release props. All fitness
+          training sessions are conducted in a private setting.
         </p>
         <p>Arrangements are possible for people who wish to exercise in pairs for
-          Pilates equipment, and maximum of 4 for mat/floor work.
+          Pilates equipment.
         </p>
       </PBox>
     </Content>

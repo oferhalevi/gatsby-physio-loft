@@ -30,19 +30,18 @@ const AboutPage = ({data}) => {
           fontSize: '1.5rem'
         }}>Physio Loft is a modern
           boutique clinic in Central Hong Kong that offers physiotherapy, private Pilates
-          training, and mentoring for professionals. A quiet and personal space that
-          caters to both body and mind.
+          training, and mentoring for professionals.
         </p>
         <p style={{
           fontSize: '1.5rem'
-        }}>Escape your fast paced
-          lifestyle, and experience the cozy relaxed environment in Physio Loft.</p>
-        <h4>Meet Ervin Paunan</h4>
+        }}>A quiet and personal space
+          for both body and mind. Escape your fast paced lifestyle, and experience the
+          cozy relaxed environment in Physio Loft.</p>
         <p>
-          Ervin Paunan is a registered physiotherapist in Hong Kong and Philippines.
-          Having been practicing for more than 18 years, Ervin developed skills in
-          effectively treating various musculoskeletal pathologies and instructing
-          corrective movement strategies.
+          Physio Loft was founded by Ervin Paunan, a registered physiotherapist in Hong
+          Kong and Philippines. Having been practicing for more than 18 years, Ervin
+          developed skills in effectively treating various musculoskeletal pathologies and
+          instructing corrective movement strategies.
         </p>
         <p>
           He is a senior educator for Polestar Pilates Asia since 2015, and had been
@@ -52,10 +51,9 @@ const AboutPage = ({data}) => {
         </p>
         <p>
           Ervin’s approach to rehabilitation is a combination of manual therapy, practical
-          use of electrotherapy, and different exercise regimens like Pilates, Gyrotonics,
-          weight training and other functional training programs.
+          use of electrotherapy, and different exercise regimens like Pilates, GYROTONIC®
+          , weight training and other functional training programs.
         </p>
-        <h4>Physio Collab</h4>
         <p>The clinic is open for rental arrangements and collaborative projects with
           other practitioners or companies. Arrangements can be made depending on
           availability and agreed conditions.

@@ -26,7 +26,7 @@ const theme : ThemeShape = {
     '2.488rem'
   ],
   colors: {
-    primary: '#c66131',
+    primary: 'rgb(13,73,27)',
     secondary: '#494992',
     grey: '#58545a',
     shade: '#f5f5f5'
