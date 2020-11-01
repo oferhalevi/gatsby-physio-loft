@@ -2,6 +2,8 @@ import React from "react"
 import Layout from '../components/layout'
 import styled from 'styled-components'
 import {Box, AnimatedBox, Button} from '../elements'
+import {graphql} from 'gatsby'
+import Img from 'gatsby-image'
 
 const PBox = styled(AnimatedBox)`
   max-width: 1400px;
@@ -19,7 +21,21 @@ const Content = styled(Box)`
   }
 `
 
+const InlineImg = styled(Img)`
+  display: inline-block;
+  float: left;
+  margin-right: 16px;
+  width: 200px;
+  margin-bottom: 16px;
+  @media (max-width: ${ (props) => props.theme.breakpoints[0]}) {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+`
+
 const AboutPage = ({data}) => {
+  console.log(data);
   return <Layout>
     <PBox py={6} px={[6, 6, 8, 10]}>
       <h1>About</h1>
@@ -32,12 +48,15 @@ const AboutPage = ({data}) => {
           boutique clinic in Central Hong Kong that offers physiotherapy, private Pilates
           training, and mentoring for professionals.
         </p>
+        <Img fluid={data.lounge.childImageSharp.fluid}/>
         <p style={{
           fontSize: '1.5rem'
         }}>A quiet and personal space
           for both body and mind. Escape your fast paced lifestyle, and experience the
           cozy relaxed environment in Physio Loft.</p>
         <p>
+          <InlineImg fluid={data.ervin.childImageSharp.fluid} style={{}}/>
+
           Physio Loft was founded by Ervin Paunan, a registered physiotherapist in Hong
           Kong and Philippines. Having been practicing for more than 18 years, Ervin
           developed skills in effectively treating various musculoskeletal pathologies and
@@ -68,3 +87,22 @@ const AboutPage = ({data}) => {
 }
 
 export default AboutPage;
+
+export const query = graphql `
+  query AboutPage {
+    ervin: file(sourceInstanceName: { eq: "images" }, name: { eq: "ervin" }) {
+      childImageSharp {
+        fluid(quality: 95, maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    lounge: file(sourceInstanceName: { eq: "images" }, name: { eq: "lounge" }) {
+      childImageSharp {
+        fluid(quality: 95, maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`

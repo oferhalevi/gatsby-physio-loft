@@ -10,7 +10,6 @@ import {ChildImageSharp} from '../types'
 
 type PageProps = {
   data: {
-    promotions: ChildImageSharp,
     aboutUs: ChildImageSharp,
     education: ChildImageSharp,
     physiotherapy: ChildImageSharp,
@@ -79,6 +78,9 @@ const Education = styled(GridItem)`
 
 const Promotions = styled.div `
   grid-area: promotions;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 16px;
   color: rgb(13, 73, 27);
   background: #fff;
@@ -101,7 +103,6 @@ const ThreeProjects = styled.div `
 const Index : React.FunctionComponent < PageProps > = ({
   data: {
     aboutUs,
-    promotions,
     education,
     physiotherapy,
     fitness
@@ -175,13 +176,6 @@ export default Index
 export const query = graphql `
   query Index {
     aboutUs: file(sourceInstanceName: { eq: "images" }, name: { eq: "about-us" }) {
-      childImageSharp {
-        fluid(quality: 95, maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    promotions: file(sourceInstanceName: { eq: "images" }, name: { eq: "promotions" }) {
       childImageSharp {
         fluid(quality: 95, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
