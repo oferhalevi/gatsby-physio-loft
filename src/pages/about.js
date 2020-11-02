@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import {Box, AnimatedBox, Button} from '../elements'
 import {graphql} from 'gatsby'
 import Img from 'gatsby-image'
+import {Helmet} from 'react-helmet'
 
 const PBox = styled(AnimatedBox)`
   max-width: 1400px;
@@ -35,8 +36,14 @@ const InlineImg = styled(Img)`
 `
 
 const AboutPage = ({data}) => {
-  console.log(data);
   return <Layout>
+    <Helmet>
+      <title>Physio Loft - About</title>
+      <meta
+        name="description"
+        content="Physio Loft is a modern boutique clinic in Central Hong Kong that offers physiotherapy, private Pilates training, and mentoring for professionals"/>
+    </Helmet>
+
     <PBox py={6} px={[6, 6, 8, 10]}>
       <h1>About</h1>
     </PBox>

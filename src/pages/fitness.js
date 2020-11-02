@@ -7,6 +7,7 @@ import SEO from '../components/SEO'
 import {animated, useSpring, config} from 'react-spring'
 import {graphql} from 'gatsby'
 import {ChildImageSharp} from '../types'
+import {Helmet} from 'react-helmet'
 
 const PBox = styled(AnimatedBox)`
   max-width: 1400px;
@@ -40,6 +41,13 @@ const Description = styled(animated.div)`
 
 const PhysioPage = ({data}) => {
   return <Layout>
+    <Helmet>
+      <title>Physio Loft - Fitness</title>
+      <meta
+        name="description"
+        content="Physio Loft is equipped with a complete set of standard Pilates equipment. Train in a safe and private environment."/>
+    </Helmet>
+
     <PBox py={6} px={[6, 6, 8, 10]}>
       <h1>Fitness</h1>
     </PBox>

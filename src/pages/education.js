@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import styled from 'styled-components'
 import {Box, AnimatedBox, Button} from '../elements'
 import {animated, useSpring, config} from 'react-spring'
+import {Helmet} from 'react-helmet'
 
 const PBox = styled(AnimatedBox)`
   max-width: 1400px;
@@ -36,6 +37,13 @@ const Description = styled(animated.div)`
 
 const PhysioPage = ({data}) => {
   return <Layout>
+    <Helmet>
+      <title>Physio Loft - Education</title>
+      <meta
+        name="description"
+        content="Physio Loft caters for aspiring professional instructors for both Studio Pilates and Physio-Pilates"/>
+    </Helmet>
+
     <PBox py={6} px={[6, 6, 8, 10]}>
       <h1>Education</h1>
     </PBox>

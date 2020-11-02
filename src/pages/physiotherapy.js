@@ -5,6 +5,7 @@ import {Box, AnimatedBox, Button} from '../elements'
 import Img from 'gatsby-image'
 import {animated, useSpring, config} from 'react-spring'
 import {graphql} from 'gatsby'
+import {Helmet} from 'react-helmet';
 
 const PBox = styled(AnimatedBox)`
   max-width: 1400px;
@@ -38,6 +39,13 @@ const Description = styled(animated.div)`
 
 const PhysioPage = ({data}) => {
     return <Layout>
+        <Helmet>
+            <title>Physio Loft - Physiotherapy</title>
+            <meta
+                name="description"
+                content="Physio Loft specializes in manual therapy and movement
+                training, complemented with Electrotherapy"/>
+        </Helmet>
         <PBox py={6} px={[6, 6, 8, 10]}>
             <h1>Physiotherapy</h1>
         </PBox>
