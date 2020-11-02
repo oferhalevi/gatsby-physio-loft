@@ -177,28 +177,28 @@ export const query = graphql `
   query Index {
     aboutUs: file(sourceInstanceName: { eq: "images" }, name: { eq: "about-us" }) {
       childImageSharp {
-        fluid(quality: 95, maxWidth: 1200) {
+        fluid(quality: 95, maxWidth: 800) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     education: file(sourceInstanceName: { eq: "images" }, name: { eq: "education-course" }) {
       childImageSharp {
-        fluid(quality: 95, maxWidth: 1200) {
+        fluid(quality: 95, maxWidth: 800) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     physiotherapy: file(sourceInstanceName: { eq: "images" }, name: { eq: "physiotherapy" }) {
       childImageSharp {
-        fluid(quality: 95, maxWidth: 1200) {
+        fluid(quality: 95, maxWidth: 800) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     fitness: file(sourceInstanceName: { eq: "images" }, name: { eq: "fitness" }) {
       childImageSharp {
-        fluid(quality: 95, maxWidth: 1200) {
+        fluid(quality: 95, maxWidth: 800) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
