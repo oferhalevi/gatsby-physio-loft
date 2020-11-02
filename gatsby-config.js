@@ -49,7 +49,7 @@ module.exports = {
     // access_token: process.env.ACCESS_TOKEN,         instagram_id:
     // process.env.BUSINESS_ID,       },     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: 'gatsby-plugin-gtag',
       options: {
         trackingId: config.googleAnalyticsID
       }
