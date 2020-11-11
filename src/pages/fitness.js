@@ -71,6 +71,8 @@ const PhysioPage = ({data}) => {
         <p>Arrangements are possible for people who wish to exercise in pairs for
           Pilates equipment.
         </p>
+        <Img fluid={data.fullSet.childImageSharp.fluid}/>
+
       </PBox>
     </Content>
   </Layout>
@@ -78,7 +80,7 @@ const PhysioPage = ({data}) => {
 
 export const query = graphql `
   query {
-    vesta: file(name: { eq: "vesta" }) {
+    fullSet: file(name: { eq: "full-set" }) {
       childImageSharp {
         fluid(quality: 95, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp

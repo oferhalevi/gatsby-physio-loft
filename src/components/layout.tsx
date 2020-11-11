@@ -256,7 +256,6 @@ interface QueryResult {
 }
 
 const Layout = ({children, color} : LayoutProps) => {
-  const data : QueryResult = useStaticQuery(query)
 
   return (
     <ThemeProvider theme={theme}>
@@ -272,22 +271,6 @@ const Layout = ({children, color} : LayoutProps) => {
             <Link to="/" aria-label="Physio Loft">
               <Logo/>
             </Link>
-            <Nav
-              color={color}
-              mt={[0, 0, 0, 6]}
-              as="nav"
-              flexWrap="nowrap"
-              flexDirection={['row', 'row', 'row', 'column']}
-              alignItems="flex-start">
-              {data
-                .navigation
-                .nodes
-                .map((item) => (
-                  <PartialNavLink to={item.link} key={item.name}>
-                    {item.name}
-                  </PartialNavLink>
-                ))}
-            </Nav>
           </Flex>
         </SideBarInner>
         <Main>{children}</Main>
@@ -323,14 +306,3 @@ const Layout = ({children, color} : LayoutProps) => {
 export default Layout
 
 Layout.defaultProps = defaultProps
-
-const query = graphql `
-  query Layout {
-    navigation: allNavigationYaml {
-      nodes {
-        name
-        link
-      }
-    }
-  }
-`
