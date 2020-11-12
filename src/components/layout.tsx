@@ -7,6 +7,9 @@ import {Box, Flex} from '../elements'
 import theme from '../../config/theme'
 import reset from '../styles/reset'
 import Logo from './logo'
+import InstagramLogo from './instagram'
+import WhatsAppLogo from './whatsapp'
+import FacebookLogo from './facebook'
 import SEO from '../components/SEO'
 
 const GlobalStyles = createGlobalStyle `
@@ -225,17 +228,18 @@ const Footer = styled.footer < {
 
 const MailTo = styled.a `
 display: block;`;
-const WhatsApp = styled.a `
-  display: inline-block;
-  background: rgb(13, 73, 27);
-  color: white !important;
-  padding:  8px 16px;
-  font-weight: 500;
-  height: 16px;
-  line-height: 1;
-  border-radius: 2em;
-  margin-bottom: 16px;
+
+const Social = styled.a `
+  width: 36px;
   margin-right: 16px;
+  svg {
+    fill: ${ (props) => `${props.theme.colors.secondary}`};
+    stroke: current;
+    transition: fill 0.2s ease;
+    &:hover {
+    fill: ${ (props) => `${props.theme.colors.primary}`};
+    }
+  }
 `;
 
 type LayoutProps = {
@@ -276,14 +280,34 @@ const Layout = ({children, color} : LayoutProps) => {
         <Main>{children}</Main>
         <Footer color={color}>
           <Box p={[6, 6, 8]} fontSize={0}>
-            <p>
-              <WhatsApp href="https://wa.me/85295433368" target="_blank">WhatsApp Us</WhatsApp>
-              <a href="tel:+852-95433368">+852 9543368</a>
+            <Flex
+              justifyContent="space-between"
+              style={{
+              marginBottom: 16
+            }}>
               <MailTo
                 href="mailto:info@physioloft.com.hk?subject=Hello%2C%20Physio%20Loft"
                 target="_blank">info@physioloft.com.hk
               </MailTo>
-            </p>
+              <a href="tel:+852-95433368">+852 95433368</a>
+            </Flex>
+            <Flex
+              flexWrap="nowrap"
+              flexDirection={['row', 'row', 'row', 'row']}
+              alignItems={['center', 'center', 'center', 'flex-start']}
+              justifyContent="flex-start"
+              style={{
+              marginBottom: 16
+            }}>
+              <Social href="https://wa.me/85295433368" target="_blank"><WhatsAppLogo/></Social>
+              <Social>
+                <a href="https://www.instagram.com/physiolofthk/" target="_blank"><InstagramLogo/></a>
+              </Social>
+              <Social>
+                <a href="https://www.facebook.com/physiolofthk" target="_blank"><FacebookLogo/></a>
+              </Social>
+            </Flex>
+
             Fisica Integrated Ltd. t/a Physio Loft<br/>
             <address style={{
               marginBottom: 16
@@ -294,7 +318,11 @@ const Layout = ({children, color} : LayoutProps) => {
             </address>
             <a
               target="_blank"
-              href="https://www.google.com/maps/place/Union+Commercial+Building,+12-16+Lyndhurst+Terrace,+Central/@22.282374,114.154595,16z/data=!4m5!3m4!1s0x3404007b41667357:0x33a8a6acc76d9326!8m2!3d22.2823744!4d114.154595?hl=en">View map</a>
+              href="https://g.page/physioloft?share"
+              style={{
+              fontWeight: 500
+            }}>
+              Get directions</a>
           </Box>
         </Footer>
       </Wrapper>
