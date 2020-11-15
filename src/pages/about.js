@@ -61,14 +61,14 @@ const AboutPage = ({data}) => {
         }}>A quiet and personal space
           for both body and mind. Escape your fast paced lifestyle, and experience the
           cozy relaxed environment in Physio Loft.</p>
-        <p>
+        <div>
           <InlineImg fluid={data.ervin.childImageSharp.fluid} style={{}}/>
 
           Physio Loft was founded by Ervin Paunan, a registered physiotherapist in Hong
           Kong and Philippines. Having been practicing for more than 18 years, Ervin
           developed skills in effectively treating various musculoskeletal pathologies and
           instructing corrective movement strategies.
-        </p>
+        </div>
         <p>
           He is a senior educator for Polestar Pilates Asia since 2015, and had been
           hosted in Korea, China, Hong Kong, Macau, Malaysia, Philippines, Singapore, and

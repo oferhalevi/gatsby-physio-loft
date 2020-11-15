@@ -300,11 +300,11 @@ const Layout = ({children, color} : LayoutProps) => {
               marginBottom: 16
             }}>
               <Social href="https://wa.me/85295433368" target="_blank"><WhatsAppLogo/></Social>
-              <Social>
-                <a href="https://www.instagram.com/physiolofthk/" target="_blank"><InstagramLogo/></a>
+              <Social href="https://www.instagram.com/physiolofthk/" target="_blank">
+                <InstagramLogo/>
               </Social>
-              <Social>
-                <a href="https://www.facebook.com/physiolofthk" target="_blank"><FacebookLogo/></a>
+              <Social href="https://www.facebook.com/physiolofthk" target="_blank">
+                <FacebookLogo/>
               </Social>
             </Flex>
 
