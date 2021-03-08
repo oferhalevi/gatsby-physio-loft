@@ -81,7 +81,7 @@ const GlobalStyles = createGlobalStyle `
     margin: 0;
     padding: 0;
     color: black;
-    font-family: 'Acumin Pro', '-apple-system', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'acumin-pro', '-apple-system', 'Roboto', 'Helvetica', 'Arial', sans-serif;
     background: white;
     font-size: 18px;
   }
