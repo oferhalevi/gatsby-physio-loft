@@ -49,7 +49,14 @@ const SEO = ({
       <meta name="description" content={seo.description}/>
       <meta name="image" content={seo.image}/> {/* Insert schema.org data conditionally (webpage/article) + everytime (breadcrumbs) */}
       <link rel="stylesheet" href="https://use.typekit.net/aee4gtg.css"></link>
-      <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"oferhalevi@gmail.com",utcoffset:"8"}))};sessionStorage.setItem("_swa","1");</script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+          if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"oferhalevi@gmail.com",utcoffset:"8"}))};sessionStorage.setItem("_swa","1");
+          `,
+        }}
+      />
+
     </Helmet>
   )
 }
