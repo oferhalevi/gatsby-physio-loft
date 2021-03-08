@@ -48,12 +48,12 @@ module.exports = {
     //     {       resolve: 'gatsby-source-instagram',       options: {
     // access_token: process.env.ACCESS_TOKEN,         instagram_id:
     // process.env.BUSINESS_ID,       },     },
-    {
-      resolve: 'gatsby-plugin-gtag',
-      options: {
-        trackingId: config.googleAnalyticsID
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-gtag',
+    //   options: {
+    //     trackingId: config.googleAnalyticsID
+    //   }
+    // },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sitemap', {
